@@ -19,3 +19,12 @@
     [(cons? a-list-of-names)
      (or (string=? (first a-list-of-names) "Flatt")
          (contains-flatt? (rest a-list-of-names)))]))
+
+(contains-flatt? (cons "Fagan"
+      (cons "Findler"
+            (cons "Fisler"
+                  (cons "Flanagan"
+                        (cons "Flatt"
+                              (cons "Felleisen"
+                                    (cons "Friedman" empty))))))))
+; I Expect the answer to be true because "Flatt" is in the list.
