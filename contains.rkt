@@ -35,3 +35,14 @@
 ; fact that the new way does not have to eventually report back its result to the "or" when it 
 ; reports the final result. Thus, I think that the second way would be better because I think it 
 ; would take up less memory for large lists of names.
+
+
+;Ex 115
+
+(define (contains? name a-list-of-names)
+  (cond
+    [(empty? a-list-of-names) false]
+    [(cons? a-list-of-names)
+     (or (string=? (first a-list-of-names) name)
+         (contains? name (rest a-list-of-names)))]))
+
