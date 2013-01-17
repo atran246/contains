@@ -38,6 +38,12 @@
 
 
 ;Ex 115
+; Name List-of-names -> Boolean
+; to determine whether the given Name occurs in a-list-of-names
+(check-expect
+ (contains? "Andrew" (cons "Joey" (cons "Robert" (cons "Pearce" empty)))) false)
+(check-expect
+ (contains? "Andrew" (cons "Joey" (cons "Andrew" (cons "Pearce" empty)))) true)
 
 (define (contains? name a-list-of-names)
   (cond
